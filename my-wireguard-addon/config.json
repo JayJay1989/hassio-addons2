@@ -1,0 +1,22 @@
+{
+  "name": "WireGuard VPN Client",
+  "version": "1.1.0",
+  "slug": "wireguard_vpn",
+  "description": "Connect Home Assistant to a WireGuard VPN using a pasted config",
+  "startup": "services",
+  "boot": "auto",
+  "hassio_api": false,
+  "hassio_role": "default",
+  "host_network": true,
+  "privileged": ["NET_ADMIN", "SYS_MODULE"],
+  "devices": ["/dev/net/tun"],
+  "options": {
+    "wg_config": "Paste your WireGuard config here"
+  },
+  "schema": {
+    "wg_config": "str"
+  },
+  "ports": {
+    "8123/tcp": 8123
+  }
+}
